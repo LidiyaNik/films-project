@@ -1,0 +1,8 @@
+<div class="py-3">
+  <div class="input-group mb-3">
+    <input [(ngModel)]="filter" class="form-control" placeholder="Please enter movie name..."/>
+    <div class="input-group-append">
+      <button (click)="searchModies()" class="btn btn-outline-secondary" [disabled]="!filter" type="button">Search</button>
+    </div>
+  </div>
+</div>

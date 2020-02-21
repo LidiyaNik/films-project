@@ -4,7 +4,11 @@ import { LayoutComponent } from './components/layout/layout.component';
 
 
 const routes: Routes = [
-  { path: "", component: LayoutComponent }
+  {
+    path: "", component: LayoutComponent, children: [
+      { path: "", loadChildren: () => import("./omdbsearch/omdbsearch.module").then(m => m.OmdbsearchModule) }
+    ]
+  }
 ];
 
 @NgModule({
