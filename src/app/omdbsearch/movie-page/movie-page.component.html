@@ -1,0 +1,26 @@
+<div class="py-3">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a routerLink="/">Movies</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{movie && movie.Title || "Unknown"}}</li>
+    </ol>
+  </nav>
+</div>
+
+<div class="row py-3" *ngIf="movie">
+  <div class="col-12 col-md-4">
+    <img [src]="poster" class="w-100">
+  </div>
+
+  <div class="col-12 col-md-8">
+    <h5 class="row-title">{{movie.Title}}</h5>
+    <p class="row-year">{{movie.Year}}</p>
+    <p class="row-director">{{movie.Director}}</p>
+    <p class="row-actors">{{movie.Actors}}</p>
+    <p class="row-plot">{{movie.Plot}}</p>
+    <p class="row-ratings">{{movie.Ratings}}</p>
+
+
+
+  </div>
+</div>

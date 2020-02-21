@@ -5,9 +5,10 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from "@angular/forms"
 import { OMDBService } from './providers/omdb.service';
 import { MovieCardComponent } from './movie-card/movie-card.component';
+import { MoviePageComponent } from './movie-page/movie-page.component';
 
 @NgModule({
-  declarations: [SearchPageComponent, MovieCardComponent],
+  declarations: [SearchPageComponent, MovieCardComponent, MoviePageComponent],
   imports: [
     CommonModule,
     FormsModule,
@@ -15,6 +16,10 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
       {
         path: "",
         component: SearchPageComponent,
+      },
+      {
+        path: ":id",
+        component: MoviePageComponent,
       }
     ])
   ],

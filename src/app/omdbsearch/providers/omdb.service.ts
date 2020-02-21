@@ -15,4 +15,14 @@ export class OMDBService {
       }
     })
   }
+
+  getMovieByID(imdbID: string) {
+    return this.http.get('http://www.omdbapi.com', {
+      params: {
+        i: imdbID,
+        plot: "full",
+        apiKey: "dd3b3c8d" 
+      }
+    })
+  }
 }

@@ -8,7 +8,7 @@ import { OMDBService } from '../providers/omdb.service';
 })
 export class SearchPageComponent implements OnInit {
 
-  filter: string = 'batman';
+  filter: string = '';
 
   movies = [];
 

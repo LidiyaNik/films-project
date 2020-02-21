@@ -1,1 +1,8 @@
-{{movie | json}}
+<div class="card">
+  <img *ngIf="movie.Poster" [src]="poster" class="card-img-top" alt="...">
+  <div class="card-body">
+  <h5 class="card-title">{{movie.Title}}</h5>
+  <p class="card-text">{{movie.Year}}</p>
+    <a [routerLink]="[movie.imdbID]" class="btn btn-primary">Details</a>
+  </div>
+</div>

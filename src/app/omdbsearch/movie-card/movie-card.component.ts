@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-movie-card',
@@ -9,9 +10,12 @@ export class MovieCardComponent implements OnInit {
   @Input()
   movie: any;
 
-  constructor() { }
+  constructor(private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
   }
 
+  get poster() {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(this.movie.Poster)
+  }
 }
