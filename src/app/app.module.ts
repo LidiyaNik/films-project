@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
+
 
 @NgModule({
   declarations: [

@@ -6,10 +6,12 @@ import { FormsModule } from "@angular/forms"
 import { OMDBService } from './providers/omdb.service';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MoviePageComponent } from './movie-page/movie-page.component';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @NgModule({
   declarations: [SearchPageComponent, MovieCardComponent, MoviePageComponent],
   imports: [
+    LazyLoadImageModule,
     CommonModule,
     FormsModule,
     RouterModule.forChild([

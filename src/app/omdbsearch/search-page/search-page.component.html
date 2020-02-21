@@ -1,6 +1,6 @@
 <div class="py-3">
   <div class="input-group mb-3">
-    <input [(ngModel)]="filter" class="form-control" placeholder="Please enter movie name..." />
+    <input (keydown.enter)="searchModies()" [(ngModel)]="filter" class="form-control" placeholder="Please enter movie name..." />
     <div class="input-group-append">
       <button (click)="searchModies()" class="btn btn-outline-secondary" [disabled]="!filter"
         type="button">Search</button>
@@ -8,8 +8,12 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row" *ngIf="!loading">
   <div class="col-6 col-md-4 mb-3" *ngFor="let movie of movies">
     <app-movie-card [movie]="movie"></app-movie-card>
   </div>
+</div>
+
+<div class="text-center" *ngIf="loading">
+  Loading.....
 </div>
