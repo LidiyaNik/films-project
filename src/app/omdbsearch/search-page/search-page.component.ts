@@ -8,13 +8,14 @@ import { OMDBService } from '../providers/omdb.service';
 })
 export class SearchPageComponent implements OnInit {
 
-  filter: string = '';
+  filter: string = 'batman';
 
   movies = [];
 
   constructor(private omdb: OMDBService) { }
 
   ngOnInit() {
+    this.searchModies()
   }
 
   searchModies() {

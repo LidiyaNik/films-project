@@ -4,9 +4,10 @@ import { SearchPageComponent } from './search-page/search-page.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from "@angular/forms"
 import { OMDBService } from './providers/omdb.service';
+import { MovieCardComponent } from './movie-card/movie-card.component';
 
 @NgModule({
-  declarations: [SearchPageComponent],
+  declarations: [SearchPageComponent, MovieCardComponent],
   imports: [
     CommonModule,
     FormsModule,
