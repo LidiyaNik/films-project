@@ -1,5 +1,5 @@
-<div class="card">
-  <img *ngIf="movie.Poster" defaultImage="/assets/default-image.jpg" [lazyLoad]="movie.Poster" class="card-img-top" alt="...">
+<div class="card shadow p-3 mb-5 bg-white rounded">
+  <img *ngIf="movie.Poster" defaultImage="/assets/default-image.jpg" [lazyLoad]="movie.Poster" class="card-img-top" class="rounded" alt="...">
   <div class="card-body">
   <h5 class="card-title">{{movie.Title}}</h5>
   <p class="card-text">{{movie.Year}}</p>
