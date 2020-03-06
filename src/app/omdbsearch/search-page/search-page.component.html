@@ -1,8 +1,7 @@
 <div class="py-3">
-  <img src="/assets/test-image.jpg" width="200" height="200"/>
-
   <div class="input-group mb-3">
-    <input (keydown.enter)="searchModies()" [(ngModel)]="filter" class="form-control" placeholder="Please enter movie name..." />
+    <input (keydown.enter)="searchModies()" [(ngModel)]="filter" class="form-control"
+      placeholder="Please enter movie name..." />
     <div class="input-group-append">
       <button (click)="searchModies()" class="btn btn-outline-secondary" [disabled]="!filter"
         type="button">Search</button>
@@ -14,6 +13,23 @@
   <div class="col-6 col-md-4 mb-3" *ngFor="let movie of movies">
     <app-movie-card [movie]="movie"></app-movie-card>
   </div>
+
+  <nav class="col-12" aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item" >
+        <a class="page-link" href="#" (click)="$event.preventDefault(); page !== 1 && currentPage = page - 1" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li [ngClass]="{'active': p == page}" class="page-item" *ngFor="let p of pages"><a class="page-link" href="#"
+          (click)="$event.preventDefault(); currentPage = p">{{p}}</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next" (click)="$event.preventDefault(); page < pages.length && currentPage = page + 1">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </div>
 
 <div class="text-center" *ngIf="loading">

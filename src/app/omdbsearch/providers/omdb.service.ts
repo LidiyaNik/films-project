@@ -5,13 +5,14 @@ import { HttpClient } from '@angular/common/http';
 export class OMDBService {
   constructor(private http: HttpClient) {}
 
-  searchMovies(filter: string) {
+  searchMovies(filter: string, page) {
     // ?s=batman&plot=full&apikey=dd3b3c8d
     return this.http.get('http://www.omdbapi.com', {
       params: {
         s: filter,
         plot: "full",
-        apiKey: "dd3b3c8d" 
+        apiKey: "dd3b3c8d",
+        page,
       }
     })
   }

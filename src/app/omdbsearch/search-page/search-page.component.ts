@@ -12,6 +12,10 @@ export class SearchPageComponent implements OnInit {
   movies = [];
   loading = false;
 
+  perPage = 10;
+  page = 1;
+  pages = [];
+
   constructor(private omdb: OMDBService) { }
 
   ngOnInit() {
@@ -23,12 +27,19 @@ export class SearchPageComponent implements OnInit {
 
   searchModies() {
     this.loading = true;
-    this.omdb.searchMovies(this.filter).subscribe((response: any) => {
+    this.omdb.searchMovies(this.filter, this.page).subscribe((response: any) => {
       this.movies = response.Search;
+      this.pages = Array(Math.floor(response.totalResults / this.perPage)).fill(1).map((item, index) => index + 1);
+      console.log(this.pages);
       this.loading = false;
       sessionStorage.setItem("search", this.filter);
     }, (e) => {
       this.loading = false;
     })
+  }
+
+  set currentPage(page) {
+    this.page = page;
+    this.searchModies();
   }
 }
