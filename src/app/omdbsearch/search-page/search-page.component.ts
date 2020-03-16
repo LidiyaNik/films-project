@@ -31,4 +31,5 @@ export class SearchPageComponent implements OnInit {
       this.loading = false;
     })
   }
+
 }
